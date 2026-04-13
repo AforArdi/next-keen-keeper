@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FriendCard = ({ friend }) => {
     const statusBadgeClass = {
@@ -9,7 +10,7 @@ const FriendCard = ({ friend }) => {
     const currentStatusBadgeClass = statusBadgeClass[friend.status];
 
     return (
-        <div className="card bg-base-100 shadow-sm">
+        <Link href={`/friends/${friend.id}`} className="card bg-base-100 shadow-sm">
             <figure className="px-10 pt-10">
                 <Image
                     src={friend.picture}
@@ -28,7 +29,7 @@ const FriendCard = ({ friend }) => {
                 </div>
                 <div className={`badge text-white ${currentStatusBadgeClass}`}>{friend.status}</div>
             </div>
-        </div>
+        </Link>
     );
 }
 
