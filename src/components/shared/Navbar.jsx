@@ -2,6 +2,25 @@ import Link from "next/link";
 import { CiTimer } from "react-icons/ci";
 import { IoHomeOutline } from "react-icons/io5";
 import { TfiStatsUp } from "react-icons/tfi";
+import NavButtons from "./NavButtons";
+
+const navItems = [
+    {
+        path: '/',
+        go: 'Home',
+        icon: <IoHomeOutline></IoHomeOutline>
+    },
+    {
+        path: '/timeline',
+        go: 'Timeline',
+        icon: <CiTimer></CiTimer>
+    },
+    {
+        path: '/stats',
+        go: 'Home',
+        icon: <TfiStatsUp></TfiStatsUp>
+    }
+]
 
 const Navbar = () => {
     return ( 
@@ -13,15 +32,13 @@ const Navbar = () => {
                     </p>
                 </div>
                 <div className="navbar-end flex items-center gap-4">
-                    <Link href={'/'}>
-                        <button className="btn"><IoHomeOutline></IoHomeOutline> Home</button>
-                    </Link>
-                    <Link href={'/timeline'}>
-                        <button className="btn"><CiTimer></CiTimer> Timeline</button>
-                    </Link>
-                    <Link href={'/stats'}>
-                        <button className="btn"><TfiStatsUp></TfiStatsUp> Stats</button>
-                    </Link>
+                    {
+                        navItems.map((item, i)=> {
+                            return (
+                                <NavButtons key={i} to={item.path}>{item.icon} {item.go}</NavButtons>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>
