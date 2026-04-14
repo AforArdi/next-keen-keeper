@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { FaBoxArchive } from "react-icons/fa6";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
-import { IoVideocamOutline } from "react-icons/io5";
-import { MdAddCall, MdOutlineDeleteForever } from "react-icons/md";
-import { TiMessages } from "react-icons/ti";
+import { MdOutlineDeleteForever } from "react-icons/md";
+import DetailsPageButtons from "./DetailsPageButtons/DetailsPageButtons";
 
 const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
     return ( 
@@ -76,11 +75,8 @@ const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
                 <div className="card bg-base-100 shadow-sm">
                     <div className="card-body">
                         <p className="text-[20px]">Quick Check-In</p>
-                        <div className="flex items-center justify-between gap-4">
-                            <button className="btn px-15 py-10 text-xl"><MdAddCall></MdAddCall> Call</button>
-                            <button className="btn px-15 py-10 text-xl"><TiMessages></TiMessages> Text</button>
-                            <button className="btn px-15 py-10 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
-                        </div>
+                        {/* use client */}
+                        <DetailsPageButtons clickedFriend={clickedFriend}></DetailsPageButtons>
                     </div>
                 </div>
             </div>
