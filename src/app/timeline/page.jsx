@@ -2,7 +2,7 @@
 
 import TimelineCard from "@/components/TimelineCard";
 import { timelineContext } from "@/context/TimelineBtnsProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CgSearchLoading } from "react-icons/cg";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { MdAddCall, MdOutlineVideoCall } from "react-icons/md";
@@ -12,10 +12,39 @@ const TimelinePage = () => {
     const date = new Date();
     const formattedDate = date.toDateString();
     const totalTimelineEvent = callTimelines.length + textTimelines.length + videoTimelines.length;
+    // sorting 
+    const [sortingType, setSortingType] = useState('');
+    // let [sorted, setSorted] = useState([]);
+    let sortedArr = [];
+
+    useEffect(()=>{
+        if(sortingType === 'call'){
+            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
+            sortedArr = [sortedData];
+        }else if(sortingType === 'text'){
+            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
+            sortedArr = [sortedData];
+        } else if(sortingType === 'video'){
+            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
+            sortedArr = [sortedData];
+        } else{
+            sortedArr = [...callTimelines, ...textTimelines, ...videoTimelines]
+        }
+    }, [sortingType, callTimelines, textTimelines, videoTimelines]);
 
     return ( 
         <div className="container mx-auto my-8">
             <h2 className="font-bold text-4xl text-center">Timeline</h2>
+            {/* sorting dropdown */}
+            <div className="dropdown dropdown-start">
+                <div tabIndex={0} role="button" className="btn m-1">Filter Timeline</div>
+                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <li onClick={()=> setSortingType('call')}><a>Call</a></li>
+                    <li onClick={()=> setSortingType('text')}><a>Text</a></li>
+                    <li onClick={()=> setSortingType('video')}><a>Video</a></li>
+                </ul>
+            </div>
+
             {totalTimelineEvent === 0 ? 
                 <div className="mt-6 py-40 shadow-md rounded-lg flex flex-col items-center">
                     <CgSearchLoading size={40}></CgSearchLoading>

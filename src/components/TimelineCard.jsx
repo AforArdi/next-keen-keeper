@@ -1,4 +1,7 @@
+'use client'
+
 const TimelineCard = ({friend, formattedDate, btnAction, Icon}) => {
+
     return ( 
         <div className="flex items-center gap-4 my-6 p-3 rounded-lg shadow-md">
             <Icon size={40}></Icon>
