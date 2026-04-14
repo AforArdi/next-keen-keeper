@@ -17,7 +17,7 @@ const navItems = [
     },
     {
         path: '/stats',
-        go: 'Home',
+        go: 'Stats',
         icon: <TfiStatsUp></TfiStatsUp>
     }
 ]

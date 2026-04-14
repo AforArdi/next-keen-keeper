@@ -7,9 +7,9 @@ import { TiMessages } from "react-icons/ti";
 
 const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
     return ( 
-        <div className="container mx-auto flex gap-4 my-15">
+        <div className="container mx-auto flex justify-center gap-4 my-15">
             {/* first div on the left */}
-            <div className="flex flex-col gap-4 w-[50vh]">
+            <div className="flex flex-col gap-4">
                 <div className="card bg-base-100 shadow-sm">
                     <figure className="px-10 pt-10">
                         <Image
@@ -41,22 +41,22 @@ const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
             {/* 2nd div on the right */}
             <div className="grid grid-cols-1 gap-4">
                 {/* 3 card parent */}
-                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                     <div className="card bg-base-100 card-md shadow-sm">
                         <div className="card-body text-center">
-                            <h2 className="font-semibold text-3xl">{clickedFriend.days_since_contact}</h2>
+                            <h2 className="font-semibold text-2xl">{clickedFriend.days_since_contact}</h2>
                             <p className="text-[#64748B]">Days Since Contact</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 card-md shadow-sm">
                         <div className="card-body text-center">
-                            <h2 className="font-semibold text-3xl">{clickedFriend.goal}</h2>
+                            <h2 className="font-semibold text-2xl">{clickedFriend.goal}</h2>
                             <p className="text-[#64748B]">Goal (Days)</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 card-md shadow-sm">
                         <div className="card-body text-center">
-                            <h2 className="font-semibold text-3xl">{clickedFriend.next_due_date}</h2>
+                            <h2 className="font-semibold text-2xl">{clickedFriend.next_due_date}</h2>
                             <p className="text-[#64748B]">Next Due</p>
                         </div>
                     </div>
@@ -76,10 +76,10 @@ const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
                 <div className="card bg-base-100 shadow-sm">
                     <div className="card-body">
                         <p className="text-[20px]">Quick Check-In</p>
-                        <div className="flex items-center justify-between">
-                            <button className="btn px-15 py-5"><MdAddCall></MdAddCall> Call</button>
-                            <button className="btn px-15 py-5"><TiMessages></TiMessages> Text</button>
-                            <button className="btn px-15 py-5"><IoVideocamOutline></IoVideocamOutline> Video</button>
+                        <div className="flex items-center justify-between gap-4">
+                            <button className="btn px-15 py-10 text-xl"><MdAddCall></MdAddCall> Call</button>
+                            <button className="btn px-15 py-10 text-xl"><TiMessages></TiMessages> Text</button>
+                            <button className="btn px-15 py-10 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
                         </div>
                     </div>
                 </div>
