@@ -5,9 +5,11 @@ import { useContext } from "react";
 import { IoVideocamOutline } from "react-icons/io5";
 import { MdAddCall } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
+import { toast } from "react-toastify";
 
 const DetailsPageButtons = ({clickedFriend}) => {
     const {callTimelines, setCallTimelines, textTimelines, setTxtTimelines, videoTimelines, setVideoTimelines} = useContext(timelineContext);
+    // console.log(clickedFriend);
 
     const handleTimelineBtn=(action)=>{
         if(action === 'call'){
@@ -15,21 +17,26 @@ const DetailsPageButtons = ({clickedFriend}) => {
                 ...callTimelines,
                 clickedFriend
             ])
+            toast.success(`You called ${clickedFriend.name}`);
         } else if(action === 'text'){
             setTxtTimelines([
                 ...textTimelines,
                 clickedFriend
             ])
+            toast.success(`You texted ${clickedFriend.name}`);
         } else if (action === 'video'){
             setVideoTimelines([
                 ...videoTimelines,
                 clickedFriend
             ])
+            toast.success(`Video call with ${clickedFriend.name}`);
         }
     };
     // console.log(callTimelines, textTimelines, videoTimelines);
     const date = new Date();
-    console.log(date);
+    const formattedDate = date.toDateString(); 
+
+    console.log(formattedDate);
     
     return ( 
         <div className="flex items-center justify-between gap-4">

@@ -1,9 +1,10 @@
-const TimelineCard = () => {
+const TimelineCard = ({friend, formattedDate, btnAction, Icon}) => {
     return ( 
-        <div className="card w-96 bg-base-100 card-xs shadow-sm">
-            <div className="card-body">
-                <h2 className="card-title">Call <span>with Someone</span></h2>
-                <p></p>
+        <div className="flex items-center gap-4 my-6 p-3 rounded-lg shadow-md">
+            <Icon size={40}></Icon>
+            <div>
+                <h2><span className="font-bold">{btnAction}</span> with {friend.name}</h2>
+                {formattedDate}
             </div>
         </div>
      );
