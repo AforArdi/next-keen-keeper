@@ -7,18 +7,29 @@ import { MdAddCall } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 
 const DetailsPageButtons = ({clickedFriend}) => {
-    const {timelines, setTimelines} = useContext(timelineContext);
+    const {callTimelines, setCallTimelines, textTimelines, setTxtTimelines, videoTimelines, setVideoTimelines} = useContext(timelineContext);
 
     const handleTimelineBtn=(action)=>{
         if(action === 'call'){
-            
+            setCallTimelines([
+                ...callTimelines,
+                clickedFriend
+            ])
+        } else if(action === 'text'){
+            setTxtTimelines([
+                ...textTimelines,
+                clickedFriend
+            ])
+        } else if (action === 'video'){
+            setVideoTimelines([
+                ...videoTimelines,
+                clickedFriend
+            ])
         }
-        setTimelines([
-            ...timelines,
-            clickedFriend
-        ])
     };
-    // console.log(timelines);
+    // console.log(callTimelines, textTimelines, videoTimelines);
+    const date = new Date();
+    console.log(date);
     
     return ( 
         <div className="flex items-center justify-between gap-4">

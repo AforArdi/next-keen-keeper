@@ -4,10 +4,12 @@ import { createContext, useState } from "react";
 export const timelineContext = createContext();
 
 const TimelineBtnsProvider = ({children}) => {
-    const [timelines, setTimelines] = useState([]);
+    const [callTimelines, setCallTimelines] = useState([]);
+    const [textTimelines, setTxtTimelines] = useState([]);
+    const [videoTimelines, setVideoTimelines] = useState([]);
+
     const data = {
-        timelines, 
-        setTimelines
+        callTimelines, setCallTimelines, textTimelines, setTxtTimelines, videoTimelines, setVideoTimelines
     }
 
     return ( 
