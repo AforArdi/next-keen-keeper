@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
 
 const NotFoundPage = () => {
     return ( 
@@ -17,8 +18,8 @@ const NotFoundPage = () => {
                 </div>
 
                 <div className="mt-10">
-                    <Link href={'/'} className="btn bg-[#244D3F] text-white px-8">
-                        Return to Home
+                    <Link href={'/'} className="btn bg-[#244D3F] text-white px-8 rounded-lg">
+                        <IoIosArrowDropleftCircle size={20}></IoIosArrowDropleftCircle> Return to Home
                     </Link>
                 </div>
             </div>
