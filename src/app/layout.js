@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Providers from "./lib";
 import { Flip, ToastContainer } from "react-toastify";
+import Footer from "@/components/shared/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar></Navbar>
           {children}
+          <Footer></Footer>
           <ToastContainer
           position="top-left"
           autoClose={3000}

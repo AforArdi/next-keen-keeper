@@ -11,26 +11,11 @@ const TimelinePage = () => {
     const {callTimelines, textTimelines, videoTimelines} = useContext(timelineContext);
     const date = new Date();
     const formattedDate = date.toDateString();
-    const totalTimelineEvent = callTimelines.length + textTimelines.length + videoTimelines.length;
-    // sorting 
-    const [sortingType, setSortingType] = useState('');
-    // let [sorted, setSorted] = useState([]);
-    let sortedArr = [];
+    // const totalTimelineEvent = callTimelines.length + textTimelines.length + videoTimelines.length;
 
-    useEffect(()=>{
-        if(sortingType === 'call'){
-            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
-            sortedArr = [sortedData];
-        }else if(sortingType === 'text'){
-            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
-            sortedArr = [sortedData];
-        } else if(sortingType === 'video'){
-            const sortedData = callTimelines.sort((a, b)=> a.btnAction = b.btnAction);
-            sortedArr = [sortedData];
-        } else{
-            sortedArr = [...callTimelines, ...textTimelines, ...videoTimelines]
-        }
-    }, [sortingType, callTimelines, textTimelines, videoTimelines]);
+    const AllTimelineEvent = [
+        
+    ]
 
     return ( 
         <div className="container mx-auto my-8">
