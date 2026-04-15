@@ -1,5 +1,3 @@
-'use client'
-
 const friendsPromise = async ()=>{
     const res = await fetch('http://localhost:3000/data.json');
     // const res = await fetch('http://next-keen-keeper-6oolxvhlu-aforardis-projects.vercel.app/data.json');
@@ -19,7 +17,7 @@ const BannerStatus = async () => {
             </div>
             <div className="card bg-base-100 card-md shadow-sm">
                 <div className="card-body text-center">
-                    <h2 className="font-semibold text-3xl">{friends.length}</h2>
+                    <h2 className="font-semibold text-3xl">3</h2>
                     <p className="text-[#64748B]">On Track</p>
                 </div>
             </div>

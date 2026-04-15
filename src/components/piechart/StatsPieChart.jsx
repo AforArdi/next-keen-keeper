@@ -5,12 +5,11 @@ import { Legend, Pie, PieChart, Tooltip } from 'recharts';
 
 const StatsPieChart = ({ isAnimationActive = true }) => {
     const {timelines} = useContext(timelineContext);
-    const totalCall = timelines.map(item=> item.action === 'Call').length;
-    console.log(totalCall, 'totalCall');
-    const totalText = timelines.map(item=> item.action === 'Text').length;
-    console.log(totalText, 'totalText')
-    const totalVideo = timelines.map(item=> item.action === 'Video').length;
-    console.log(totalVideo, 'totalVideo')
+
+    const totalCall = timelines.filter(item=> item.action === 'Call').length;
+    // console.log(totalCall, 'totalCall');
+    const totalText = timelines.filter(item=> item.action === 'Text').length;
+    const totalVideo = timelines.filter(item=> item.action === 'Video').length;
 
     const data = [
         { name: "Call", value: totalCall, fill: "#244D3F" },
@@ -20,6 +19,9 @@ const StatsPieChart = ({ isAnimationActive = true }) => {
 
     return ( 
         <div className='mt-4'>
+            {totalCall + totalText + totalVideo === 0 ? 
+            <h2 className='text-3xl text-center'>No Data Found in Timeline</h2> 
+            :
             <PieChart style={{ width: '100%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                 <Pie
                     data={data}
@@ -36,10 +38,9 @@ const StatsPieChart = ({ isAnimationActive = true }) => {
                 <Legend></Legend>
                 <Tooltip></Tooltip>
             </PieChart>
+            }
         </div>
      );
 }
  
 export default StatsPieChart;
-
-did I do it right? when I'm adding something to the timeline all three of them are showing the same value
