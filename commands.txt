@@ -1,0 +1,31 @@
+Read all files inside components folder, apps folder and as you can see that
+1.
+{
+                        timelines.map(friend=>{
+                            return (
+                                <TimelineCard
+                                key={friend.id}
+                                friend={friend}
+                                formattedDate={formattedDate}
+                                btnAction='Call'
+                                Icon={MdAddCall}
+                                ></TimelineCard>
+                            )
+                        })
+                    }
+
+2.
+const TimelineCard = ({friend, formattedDate,btnAction, Icon}) => {
+
+    return ( 
+        <div className="flex items-center gap-4 my-6 p-3 rounded-lg shadow-md">
+            <Icon size={40}></Icon>
+            <div>
+                <h2><span className="font-bold">{btnAction}</span> with {friend.name}</h2>
+                {formattedDate}
+            </div>
+        </div>
+     );
+}
+
+I need to show different icon based on btnAction , but I can not put static button action like that, its not correct, and later I also need to do filtering based on the button action, now how can I set the btn action to show call text or video in the timeline card and also show the icon based on that please teach me. the key thing here is how can I get the button action when the user clicks on any of three buttons (call, text or vide0) from the page.jsx inside [id] folder inside friends

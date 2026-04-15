@@ -8,41 +8,21 @@ import { TiMessages } from "react-icons/ti";
 import { toast } from "react-toastify";
 
 const DetailsPageButtons = ({clickedFriend}) => {
-    const {callTimelines, setCallTimelines, textTimelines, setTxtTimelines, videoTimelines, setVideoTimelines} = useContext(timelineContext);
-    // console.log(clickedFriend);
+    const {timelines, setTimelines} = useContext(timelineContext);
 
-    const handleTimelineBtn=(action)=>{
-        if(action === 'call'){
-            setCallTimelines([
-                ...callTimelines,
-                clickedFriend
-            ])
-            toast.success(`You called ${clickedFriend.name}`);
-        } else if(action === 'text'){
-            setTxtTimelines([
-                ...textTimelines,
-                clickedFriend
-            ])
-            toast.success(`You texted ${clickedFriend.name}`);
-        } else if (action === 'video'){
-            setVideoTimelines([
-                ...videoTimelines,
-                clickedFriend
-            ])
-            toast.success(`Video call with ${clickedFriend.name}`);
-        }
+    const handleTimelineBtn=(btnAction)=>{
+        setTimelines([
+            ...timelines,
+            {friend: clickedFriend, action: btnAction}
+        ])
+        toast.success(`You called ${clickedFriend.name}`);
     };
-    // console.log(callTimelines, textTimelines, videoTimelines);
-    const date = new Date();
-    const formattedDate = date.toDateString(); 
-
-    console.log(formattedDate);
     
     return ( 
         <div className="flex items-center justify-between gap-4">
-            <button onClick={()=> handleTimelineBtn('call')} className="btn px-15 py-10 text-xl"><MdAddCall></MdAddCall> Call</button>
-            <button onClick={()=> handleTimelineBtn('text')} className="btn px-15 py-10 text-xl"><TiMessages></TiMessages> Text</button>
-            <button onClick={()=> handleTimelineBtn('video')} className="btn px-15 py-10 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
+            <button onClick={()=> handleTimelineBtn('Call')} className="btn px-15 py-10 text-xl"><MdAddCall></MdAddCall> Call</button>
+            <button onClick={()=> handleTimelineBtn('Text')} className="btn px-15 py-10 text-xl"><TiMessages></TiMessages> Text</button>
+            <button onClick={()=> handleTimelineBtn('Video')} className="btn px-15 py-10 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
         </div>
      );
 }
