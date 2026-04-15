@@ -27,22 +27,24 @@ const StatsPieChart = ({ isAnimationActive = true }) => {
                 <h2 className="text-center font-semibold">No Data Found in Timeline</h2>
             </div>
             :
-            <PieChart style={{ width: '100%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
-                <Pie
-                    data={data}
-                    innerRadius="80%"
-                    outerRadius="100%"
-                    // Corner radius is the rounded edge of each pie slice
-                    cornerRadius="50%"
-                    fill="#8884d8"
-                    // padding angle is the gap between each pie slice
-                    paddingAngle={5}
-                    dataKey="value"
-                    isAnimationActive={isAnimationActive}
-                />
-                <Legend></Legend>
-                <Tooltip></Tooltip>
-            </PieChart>
+            <div className='flex justify-center'>
+                <PieChart style={{ width: '100%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
+                    <Pie
+                        data={data}
+                        innerRadius="80%"
+                        outerRadius="100%"
+                        // Corner radius is the rounded edge of each pie slice
+                        cornerRadius="50%"
+                        fill="#8884d8"
+                        // padding angle is the gap between each pie slice
+                        paddingAngle={5}
+                        dataKey="value"
+                        isAnimationActive={isAnimationActive}
+                    />
+                    <Legend></Legend>
+                    <Tooltip></Tooltip>
+                </PieChart>
+            </div>
             }
         </div>
      );

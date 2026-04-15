@@ -51,10 +51,10 @@ const TimelinePage = () => {
 
                 <div>
                     {
-                        filteredTimelines.map(friend=>{
+                        filteredTimelines.map((friend, index)=>{
                             return (
                                 <TimelineCard
-                                key={friend.id}
+                                key={index}
                                 friend={friend}
                                 formattedDate={formattedDate}
                                 btnAction={friend.action}

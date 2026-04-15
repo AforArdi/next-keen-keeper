@@ -19,10 +19,10 @@ const DetailsPageButtons = ({clickedFriend}) => {
     };
     
     return ( 
-        <div className="flex items-center justify-between gap-4">
-            <button onClick={()=> handleTimelineBtn('Call')} className="btn px-15 py-10 text-xl"><MdAddCall></MdAddCall> Call</button>
-            <button onClick={()=> handleTimelineBtn('Text')} className="btn px-15 py-10 text-xl"><TiMessages></TiMessages> Text</button>
-            <button onClick={()=> handleTimelineBtn('Video')} className="btn px-15 py-10 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
+        <div className="flex items-center justify-between">
+            <button onClick={()=> handleTimelineBtn('Call')} className="btn px-10 py-8 text-xl"><MdAddCall></MdAddCall> Call</button>
+            <button onClick={()=> handleTimelineBtn('Text')} className="btn px-10 py-8 text-xl"><TiMessages></TiMessages> Text</button>
+            <button onClick={()=> handleTimelineBtn('Video')} className="btn px-10 py-8 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
         </div>
      );
 }

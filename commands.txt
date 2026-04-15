@@ -1,45 +1,13 @@
-'use client'
-import { timelineContext } from '@/context/TimelineBtnsProvider';
-import { useContext } from 'react';
-import { Legend, Pie, PieChart, Tooltip } from 'recharts';
+    In my TimelineCard.jsx I did friend.friend.name because I did this: {friend: clickedFriend, action: btnAction} inside DetailsPageButtons.jsx
 
-const StatsPieChart = ({ isAnimationActive = true }) => {
-    const {timelines} = useContext(timelineContext);
-    const totalCall = timelines.map(item=> item.action === 'Call').length;
-    console.log(totalCall, 'totalCall');
-    const totalText = timelines.map(item=> item.action === 'Text').length;
-    console.log(totalText, 'totalText')
-    const totalVideo = timelines.map(item=> item.action === 'Video').length;
-    console.log(totalVideo, 'totalVideo')
+Now inside my TimelinePage it's showing my the key prop error here:
+<TimelineCard
+                                key={friend.id}
+                                friend={friend}
+                                formattedDate={formattedDate}
+                                btnAction={friend.action}
+                                Icon={icons[friend.action]}
+                                ></TimelineCard>
 
-    const data = [
-        { name: "Call", value: totalCall, fill: "#244D3F" },
-        { name: "Text", value: totalText, fill: "#7F37F5" },
-        { name: "Video", value: totalVideo, fill: "#37A163" },
-    ];
-
-    return ( 
-        <div className='mt-4'>
-            <PieChart style={{ width: '100%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
-                <Pie
-                    data={data}
-                    innerRadius="80%"
-                    outerRadius="100%"
-                    // Corner radius is the rounded edge of each pie slice
-                    cornerRadius="50%"
-                    fill="#8884d8"
-                    // padding angle is the gap between each pie slice
-                    paddingAngle={5}
-                    dataKey="value"
-                    isAnimationActive={isAnimationActive}
-                />
-                <Legend></Legend>
-                <Tooltip></Tooltip>
-            </PieChart>
-        </div>
-     );
-}
- 
-export default StatsPieChart;
-
-did I do it right? when I'm adding something to the timeline all three of them are showing the same value
+I can't access the key now, is there any other way to write this - {friend: clickedFriend, action: btnAction}
+so that this key prop problem doesn't showup
