@@ -1,7 +1,8 @@
 import FriendCard from "./FriendCard";
+// import data from '../../public/data.json';
 
 const friendsPromise = async ()=>{
-    const res = await fetch('http://localhost:3000/data.json', {
+    const res = await fetch('https://next-keen-keeper.vercel.app/data.json', {
         cache: 'no-store'
     });
     // const res = await fetch('http://next-keen-keeper-6oolxvhlu-aforardis-projects.vercel.app/data.json');
@@ -11,6 +12,7 @@ const friendsPromise = async ()=>{
 
 const AllFriends = async () => {
     const friends = await friendsPromise();
+    // const friends = data;
     // console.log(friends);
 
     return ( 
