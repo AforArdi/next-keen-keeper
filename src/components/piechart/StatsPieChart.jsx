@@ -1,6 +1,7 @@
 'use client'
 import { timelineContext } from '@/context/TimelineBtnsProvider';
 import { useContext } from 'react';
+import { TiChartPieOutline } from 'react-icons/ti';
 import { Legend, Pie, PieChart, Tooltip } from 'recharts';
 
 const StatsPieChart = ({ isAnimationActive = true }) => {
@@ -20,7 +21,11 @@ const StatsPieChart = ({ isAnimationActive = true }) => {
     return ( 
         <div className='mt-4'>
             {totalCall + totalText + totalVideo === 0 ? 
-            <h2 className='text-3xl text-center'>No Data Found in Timeline</h2> 
+            // <h2 className='text-3xl text-center'>No Data Found in Timeline</h2>
+            <div className="mt-6 py-40 shadow-md rounded-lg flex flex-col items-center">
+                <TiChartPieOutline size={40}></TiChartPieOutline>
+                <h2 className="text-center font-semibold">No Data Found in Timeline</h2>
+            </div>
             :
             <PieChart style={{ width: '100%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                 <Pie

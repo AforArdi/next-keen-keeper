@@ -12,7 +12,7 @@ const StatsPage = async () => {
 
     return ( 
         <div className="container mx-auto my-8">
-            <h2 className="font-bold text-4xl">Friendship Analytics</h2>
+            <h2 className="font-bold text-4xl text-center">Friendship Analytics</h2>
             <StatsPieChart></StatsPieChart>
         </div>
      );
