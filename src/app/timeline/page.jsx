@@ -7,6 +7,7 @@ import { CgSearchLoading } from "react-icons/cg";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { MdAddCall, MdOutlineVideoCall } from "react-icons/md";
 
+
 const TimelinePage = () => {
     const {timelines, searchValue, setSearchValue} = useContext(timelineContext);
     const date = new Date();
@@ -52,7 +53,7 @@ const TimelinePage = () => {
                     <form className="join" onSubmit={(e) => e.preventDefault()}>
                         <label className="input rounded-lg">
                             <input type="text"
-                            placeholder="Search"
+                            placeholder="Search Name"
                             name="search"
                             onChange={(e)=>setSearchValue(e.target.value)}
                             />
