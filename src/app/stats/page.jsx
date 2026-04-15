@@ -1,5 +1,10 @@
 import StatsPieChart from "@/components/piechart/StatsPieChart";
 
+export const metadata = {
+  title: "Stats | KeenKeeper",
+  description: "Friends to keep close in your life",
+};
+
 const friendsPromise = async ()=>{
     const res = await fetch('https://next-keen-keeper.vercel.app/data.json');
     // const res = await fetch('http://next-keen-keeper-6oolxvhlu-aforardis-projects.vercel.app/data.json');

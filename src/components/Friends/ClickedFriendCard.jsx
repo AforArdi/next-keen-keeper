@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaBoxArchive } from "react-icons/fa6";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
 import { MdOutlineDeleteForever } from "react-icons/md";
-import DetailsPageButtons from "./DetailsPageButtons/DetailsPageButtons";
+import DetailsPageButtons from "../DetailsPageButtons/DetailsPageButtons";
 
 const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
     return ( 

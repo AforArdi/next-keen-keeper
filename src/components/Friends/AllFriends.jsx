@@ -1,5 +1,7 @@
-import FriendCard from "./FriendCard";
+
 // import data from '../../public/data.json';
+
+import FriendCard from "./FriendCard";
 
 const friendsPromise = async ()=>{
     const res = await fetch('https://next-keen-keeper.vercel.app/data.json', {
