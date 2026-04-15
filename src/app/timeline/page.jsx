@@ -11,11 +11,23 @@ const TimelinePage = () => {
     const {timelines} = useContext(timelineContext);
     const date = new Date();
     const formattedDate = date.toDateString();
+    // console.log(formattedDate);
+
+    // icons based on call text video
     const icons = {
         'Call': MdAddCall,
         'Text': LuMessageCircleMore,
         'Video': MdOutlineVideoCall,
     }
+    const [filtered, setFiltered] = useState('all');
+    const filteredTimelines = timelines.filter(friend=> {
+        if(filtered === 'all'){
+            return true;
+        } else{
+            return friend.action.toLowerCase() === filtered;
+        }
+    })
+    // console.log(filteredTimelines);
 
     return ( 
         <div className="container mx-auto my-8">
@@ -24,9 +36,10 @@ const TimelinePage = () => {
             <div className="dropdown dropdown-start">
                 <div tabIndex={0} role="button" className="btn m-1">Filter Timeline</div>
                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li onClick={()=> setSortingType('call')}><a>Call</a></li>
-                    <li onClick={()=> setSortingType('text')}><a>Text</a></li>
-                    <li onClick={()=> setSortingType('video')}><a>Video</a></li>
+                    <li onClick={()=> setFiltered('all')}><a>All</a></li>
+                    <li onClick={()=> setFiltered('call')}><a>Call</a></li>
+                    <li onClick={()=> setFiltered('text')}><a>Text</a></li>
+                    <li onClick={()=> setFiltered('video')}><a>Video</a></li>
                 </ul>
             </div>
 
@@ -38,7 +51,7 @@ const TimelinePage = () => {
 
                 <div>
                     {
-                        timelines.map(friend=>{
+                        filteredTimelines.map(friend=>{
                             return (
                                 <TimelineCard
                                 key={friend.id}
