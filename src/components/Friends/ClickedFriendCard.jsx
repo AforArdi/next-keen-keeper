@@ -41,7 +41,7 @@ const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
             {/* 2nd div on the right */}
             <div className="grid grid-cols-1 gap-4">
                 {/* 3 card parent */}
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4">
                     <div className="card bg-base-100 card-md shadow-sm">
                         <div className="card-body text-center">
                             <h2 className="font-semibold text-2xl">{clickedFriend.days_since_contact}</h2>

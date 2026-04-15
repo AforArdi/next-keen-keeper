@@ -8,7 +8,7 @@ const friendsPromise = async ()=>{
 const BannerStatus = async () => {
     const friends = await friendsPromise();
     return ( 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
             <div className="card bg-base-100 card-md shadow-sm">
                 <div className="card-body text-center">
                     <h2 className="font-semibold text-3xl">{friends.length}</h2>
