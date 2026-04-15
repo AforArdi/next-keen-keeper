@@ -5,9 +5,10 @@ export const timelineContext = createContext();
 
 const TimelineBtnsProvider = ({ children }) => {
     const [timelines, setTimelines] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
 
     const data = {
-        timelines, setTimelines
+        timelines, setTimelines, searchValue, setSearchValue
     }
 
     return (
