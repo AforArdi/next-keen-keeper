@@ -6,8 +6,8 @@ import DetailsPageButtons from "./DetailsPageButtons/DetailsPageButtons";
 
 const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
     return ( 
-        <div className="container mx-auto flex justify-center gap-4 my-15">
-            {/* first div on the left */}
+        <div className="container mx-auto grid md:grid-cols-2 gap-4 my-15">
+            {/* details div on the left */}
             <div className="flex flex-col gap-4">
                 <div className="card bg-base-100 shadow-sm">
                     <figure className="px-10 pt-10">
@@ -28,6 +28,7 @@ const ClickedFriendCard = ({clickedFriend, currentStatusBadgeClass}) => {
                         </div>
                         <div className={`badge text-white ${currentStatusBadgeClass}`}>{clickedFriend.status}</div>
                         <p>{clickedFriend.bio}</p>
+                        <p><span className="font-bold">Email:</span> {clickedFriend.email}</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-4">

@@ -15,14 +15,14 @@ const DetailsPageButtons = ({clickedFriend}) => {
             ...timelines,
             {friend: clickedFriend, action: btnAction}
         ])
-        toast.success(`You called ${clickedFriend.name}`);
+        toast.success(`${btnAction} with ${clickedFriend.name}`);
     };
     
     return ( 
-        <div className="flex items-center justify-between">
-            <button onClick={()=> handleTimelineBtn('Call')} className="btn px-10 py-8 text-xl"><MdAddCall></MdAddCall> Call</button>
-            <button onClick={()=> handleTimelineBtn('Text')} className="btn px-10 py-8 text-xl"><TiMessages></TiMessages> Text</button>
-            <button onClick={()=> handleTimelineBtn('Video')} className="btn px-10 py-8 text-xl"><IoVideocamOutline></IoVideocamOutline> Video</button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <button onClick={()=> handleTimelineBtn('Call')} className="btn px-10 py-6"><MdAddCall></MdAddCall> Call</button>
+            <button onClick={()=> handleTimelineBtn('Text')} className="btn px-10 py-6"><TiMessages></TiMessages> Text</button>
+            <button onClick={()=> handleTimelineBtn('Video')} className="btn px-10 py-6"><IoVideocamOutline></IoVideocamOutline> Video</button>
         </div>
      );
 }

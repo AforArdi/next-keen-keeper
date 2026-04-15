@@ -1,4 +1,5 @@
 import ClickedFriendCard from "@/components/ClickedFriendCard";
+import { notFound } from "next/navigation";
 
 const friendsPromise = async ()=>{
     const res = await fetch('http://localhost:3000/data.json');
@@ -13,6 +14,9 @@ const FriendDetails = async ({params}) => {
     const {id} = await params;
     const clickedFriend = friends.find(friend=> friend.id == id);
     // console.log(clickedFriend);
+    if (!clickedFriend) {
+        notFound(); 
+    }
 
     const statusBadgeClass = {
         'almost due': 'badge-warning',
