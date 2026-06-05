@@ -1,4 +1,8 @@
 # Next Keen Keeper
+
+<img width="960" height="448" alt="keen-keeper-ss" src="https://github.com/user-attachments/assets/60623405-dada-47c9-adfe-0facbdd84433" />
+<img width="960" height="448" alt="keen-keeper-ss-2" src="https://github.com/user-attachments/assets/d770f722-c17e-49ae-9af5-95e4f8d47eba" />
+
 ### Live Link: https://next-keen-keeper.vercel.app/
 
 A modern friend management application built to help you stay connected and maintain meaningful relationships. Track interactions, analyze your friendship patterns, and stay connected with the people who matter most.
